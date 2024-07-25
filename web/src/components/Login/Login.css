@@ -1,0 +1,36 @@
+.loginbody {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* .container-bg {
+    background: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px;
+    padding: 20px;
+  } */
+  
+  .input-group-text {
+    cursor: pointer;
+    border-left: 0; /* Removes the border between the input and icon */
+    background: transparent;
+  }
+  
+  .password-input-group .form-control {
+    border-right: 0; /* Removes the border between the input and icon */
+  }
+  
+  .forgot-password-link {
+    font-size: 0.9rem;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .forgot-password-link:hover {
+    text-decoration: underline;
+  }
+  
