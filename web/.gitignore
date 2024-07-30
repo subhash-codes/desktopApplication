@@ -7,7 +7,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
+node_modules/
+desktop/node_modules/electron/dist/electron.exe
 dist
 dist-ssr
 *.local

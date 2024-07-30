@@ -6,6 +6,11 @@ import POS from './Pages/POS/POS';
 import AddCategory from './Pages/AddCategory/AddCategory';
 import AddProduct from './Pages/AddProduct/AddProduct';
 import NavbarHeader from './components/NavbarHeader/NavbarHeader';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import Setting from './Pages/Settings/Setting';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import UpdateCategory from './Pages/Temp/UpdateCategory';
 
 
 
@@ -42,14 +47,18 @@ const App = () => {
   };
   return (
     <div>
-     
+
+      <ToastContainer/>
       {isLoggedin ? (
-        <>
+        <>  
          <NavbarHeader onLogout={handleLogout} />
           <Routes>
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/pos" element={<POS />} />
-            <Route path="/addCategory" element={<AddCategory />} />
-            <Route path="/addProduct" element={<AddProduct />} />
+            <Route path="/addCategory" element={<AddCategory url={url} />} />
+            <Route path="/addProduct" element={<AddProduct url={url} />} />
+            <Route path="/setting" element={<Setting url={url} />} />
+            {/* <Route path="/update" element={<UpdateCategory url={url} />} /> */}
 
           </Routes>
         </>

@@ -4,26 +4,29 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { NavLink } from 'react-router-dom';
+import { FaUser, FaCog, FaSignOutAlt } from 'react-icons/fa';
 
-const NavbarHeader = ({onLogout}) => {
+const NavbarHeader = ({ onLogout }) => {
   return (
     <Navbar bg="dark" data-bs-theme="dark" className="text-white">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">Billing App</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" className="d-flex justify-content-between">
           <Nav className="me-auto">
-
-            <NavLink to='/pos'>
-            <p>POS</p>
+            <NavLink to='/dashboard' className="nav-link">
+              Dashbord
             </NavLink>
-            <NavLink to='/addCategory'>
-            <p>Add Category</p>
+            <NavLink to='/pos' className="nav-link">
+              POS
             </NavLink>
-            <NavLink to='/addProduct'>
-            <p>Add Product</p>
+            <NavLink to='/addCategory' className="nav-link">
+              Add Category
             </NavLink>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <NavLink to='/addProduct' className="nav-link">
+              Add Product
+            </NavLink>
+            {/* <Nav.Link href="#link">Link</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -34,10 +37,26 @@ const NavbarHeader = ({onLogout}) => {
               <NavDropdown.Item href="#action/3.4">
                 Separated link
               </NavDropdown.Item>
+            </NavDropdown> */}
+          </Nav>
+          <Nav>
+            <NavDropdown 
+              title={<FaUser />} 
+              id="user-dropdown" 
+              align="end"
+              className="user-dropdown"
+            >
+              <NavDropdown.Item >
+                <NavLink to='/setting' className='nav-link' style={{color:'white'}}>
+                <FaCog /> Settings
+                </NavLink>
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={onLogout} >
+                <NavLink className='nav-link'>
+                <FaSignOutAlt /> Logout
+                </NavLink>
+              </NavDropdown.Item>
             </NavDropdown>
-            <div className="right-nav">
-        <button onClick={onLogout} className='logout'>Logout</button>
-        </div>
           </Nav>
         </Navbar.Collapse>
       </Container>

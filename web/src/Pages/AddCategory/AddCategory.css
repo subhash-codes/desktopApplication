@@ -7,9 +7,189 @@
   }
   
   .rightdiv {
+    width: 100%;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #fff;
   }
   
+
+
+
+
+  /* @@@@@@@@@@@@@@@@@@@@@@@List Category @@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+
+
+
+/* List styles */
+.category-list {
+  width: 100%;
+  height: 70vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-category-nav {
+  margin-bottom: 10px; /* Adjusted margin */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  padding: 15px 10px; /* Added padding */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.category-list-table {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto; 
+}
+
+.category-list-table .title {
+  position: sticky;
+  top: 0; /* Ensures the title sticks to the top */
+  background-color: rgba(1, 1, 1, 0.806);
+  padding: 14px;
+  color: white;
+}
+
+.category-list-table-format {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  background-color: white;
+  justify-content: space-between;
+  padding: 10px 12px;
+  margin-bottom: 1px;
+  border-radius: 5px;
+  color: black;
+  font-weight: 500;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.action-btn {
+  display: flex;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.cat-dlt-btn {
+  font-size: 18px;
+  color: red;
+}
+.cat-edit-btn {
+  color: green;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .main-screen-product {
+      flex-direction: column;
+  }
+
+  .category-main, .list {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+
+  .add-category-btn {
+      align-self: center;
+  }
+}
+
+/* Optional custom scrollbar styling */
+.category-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.category-list::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.category-list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* @@@@@@@@@@@@@ MODAL CSS @@@@@@@@@@@@@@@@@*/
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: '-50%';
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  outline: none;
+  width: 500px;
+
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.edit-form{
+  position: relative;
+}
+
+
+.popup-p{
+  font-weight: 300;
+  margin-left:5px ;
+}
+.popup-input{
+  width: 80%;
+  background: transparent;
+  border: 1px solid grey;
+  padding: 8px 5px;
+  border-radius: 6px;
+  margin: 4px;
+}
+
+/* .action-btn{
+  
+  margin-left: -160px;
+  border: 2px solid yellow;
+} */
+
+.cross{
+  position: absolute;
+  top: 8px;
+  right: -1px;
+  font-size: 23px;
+  color: red;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.update-btn{
+padding: 7px 15px;
+margin: 7px;
+font-size: 15px;
+background-color: black;
+border: none;
+color: white;
+border-radius: 5px;
+}
+
+.update-btn:hover{
+  cursor: pointer;
+  background-color: green;
+}
+
